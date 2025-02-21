@@ -1,53 +1,91 @@
+#Em "Local escolhido" coloque o nome da sua empresa/domínio
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal AD</title>
+    <title>Dados do Active Directory "Local escolhido"</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #005baa;
+            color: white;
+            padding: 1em 0;
             text-align: center;
         }
         .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: white;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .intro {
+            margin-bottom: 20px;
+            color: #333;
+            line-height: 1.6;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
         }
-        th {
-            background-color: #007bff;
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #005baa;
             color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+        .button:hover {
+            transform: translateY(-5px);
+            background-color: #003f7f;
+        }
+        .button img {
+            max-width: 50px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Dados do Active Directory "local escolhido"</h1>
+    </header>
     <div class="container">
-        <h2>Consulta de Usuários AD</h2>
-        <table>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-            </tr>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.cn }}</td>
-                <td>{{ user.mail }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+        <p class="intro">Bem-vindo ao portal de consulta do Active Directory. Aqui, você pode obter informações sobre os dados do AD do "local escolhido", como quantitativos de usuários, máquinas, e status de usuários (ativos ou bloqueados). Utilize os botões abaixo para consultar os dados desejados.</p>
+        <div class="buttons">
+            <a href="/get_users" class="button">
+                <img src="/static/user_icon.png" alt="Usuários">
+                Quantidade de Usuários
+            </a>
+            <a href="/get_computers" class="button">
+                <img src="/static/computer_icon.png" alt="Computadores">
+                Quantidade de Máquinas
+            </a>
+            <a href="/get_active_users" class="button">
+                <img src="/static/active_user_icon.png" alt="Usuários Ativos">
+                Usuários Ativos
+            </a>
+            <a href="/get_blocked_users" class="button">
+                <img src="/static/blocked_user_icon.png" alt="Usuários Bloqueados">
+                Usuários Bloqueados
+            </a>
+        </div>
     </div>
 </body>
 </html>
