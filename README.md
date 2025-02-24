@@ -17,4 +17,15 @@ For any questions or suggestions, feel free to contribute or open an issue.
 
 ---
 
-Esse texto garante que seu código está disponível para aprendizado, mas que cada usuário deve usá-lo com responsabilidade. Se precisar de ajustes ou quiser incluir algo mais específico, me avisa! 🚀
+## Isenção de responsabilidade e política de uso
+
+Toda a documentação, scripts e projetos disponíveis neste repositório são pessoais e compartilhados para fins educacionais e de referência. Se você optar por usar ou adaptar qualquer conteúdo, siga as práticas recomendadas e garanta a conformidade com as políticas e regulamentações aplicáveis ​​da sua organização.
+
+⚠ **Aviso de segurança:** Os scripts e configurações fornecidos podem interagir com o Active Directory e outros sistemas críticos. O uso indevido pode resultar em vulnerabilidades de segurança, violações de dados ou falhas do sistema. O proprietário do repositório não é responsável por qualquer uso indevido, dano ou consequências não intencionais resultantes do uso deste material.
+
+Ao usar este repositório, você concorda que:
+- Você assume total responsabilidade pela implementação e teste de qualquer script ou configuração.
+- Você não usará o conteúdo para fins maliciosos.
+- Você revisará e adaptará adequadamente os scripts ao seu ambiente antes da implantação.
+
+Para quaisquer perguntas ou sugestões, sinta-se à vontade para contribuir ou abrir um problema.
