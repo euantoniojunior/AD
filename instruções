@@ -1,0 +1,112 @@
+#Instruções de Implementação#
+
+### Relatório de Implantação do Site para Consulta de Dados do Active Directory
+
+#### **1. Instalação do Python**
+1. Baixado e instalado o Python a partir do site oficial (https://www.python.org/downloads/).
+2. Durante a instalação:
+   - Selecionada a opção "Add Python to PATH".
+   - Realizada a instalação padrão.
+3. Verificação da instalação no CMD:
+   ```bash
+   python --version
+   pip --version
+   ```
+
+#### **2. Criação do Ambiente Virtual**
+1. Criado um ambiente virtual para isolar dependências:
+   ```bash
+   python -m venv venv
+   ```
+2. Ativado o ambiente virtual:
+   - Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+
+#### **3. Instalação das Dependências**
+1. Instalados os módulos necessários:
+   ```bash
+   pip install flask ldap3
+   ```
+
+#### **4. Desenvolvimento do Script Flask**
+1. Criado o arquivo `app.py` com as seguintes funcionalidades:
+   - Configuração do servidor Flask.
+   - Rotas para consultas ao Active Directory:
+     - Quantidade de usuários.
+     - Quantidade de máquinas.
+     - Usuários ativos.
+     - Usuários bloqueados.
+2. Comentários adicionados no código para indicar os pontos de alteração (ex.: credenciais, servidor AD).
+
+#### **5. Configuração do Design do Site**
+1. Criado o diretório `templates` e o arquivo `index.html` com o layout do site:
+   - Título: **Dados do Active Directory "XPTO"**.
+   - Introdução:
+     - Texto explicativo: "Bem-vindo ao portal de consulta de dados do Active Directory - "XPTO". Este serviço permite consultar informações importantes como quantidade de usuários, máquinas, usuários ativos e bloqueados de forma rápida e intuitiva."
+   - Adicionadas cores do Sebrae (azul e branco predominantes) e o logotipo oficial no cabeçalho.
+   - Botões com funções:
+     - Quantidade de Usuários.
+     - Quantidade de Máquinas.
+     - Usuários Ativos.
+     - Usuários Bloqueados.
+   - Adicionadas imagens ao lado dos botões para equivalência visual:
+     - Usuários: ícone de pessoas.
+     - Máquinas: ícone de computador.
+     - Usuários Ativos: ícone de check verde.
+     - Usuários Bloqueados: ícone de cadeado vermelho.
+2. Aplicadas melhorias no design:
+   - Bordas arredondadas nos botões.
+   - Efeitos de hover para destacar ao passar o mouse.
+   - Layout responsivo para diferentes dispositivos.
+
+#### **6. Correção de Problemas**
+1. **Erro de UnicodeDecodeError**:
+   - Resolvido convertendo o arquivo `index.html` para codificação UTF-8 sem BOM.
+2. **Internal Server Error**:
+   - Habilitado modo debug para identificar o problema.
+   - Verificada a existência dos arquivos e configurações do AD.
+
+#### **7. Execução do Servidor Flask**
+1. Iniciado o servidor Flask:
+   ```bash
+   python app.py
+   ```
+2. Acesso ao site via navegador:
+   - Local:
+     ```
+     http://127.0.0.1:5000
+     ```
+   - Remoto (se aplicável):
+     ```
+     http://<IP_DO_SERVIDOR>:5000
+     ```
+
+#### **8. Testes e Validação**
+1. Testados todos os botões e exibidos os resultados esperados no site.
+2. Confirmado que as consultas ao Active Directory funcionaram corretamente.
+
+#### **9. Estrutura Final do Projeto**
+- **Diretório Principal:**
+  - `app.py`
+  - `venv/` (ambiente virtual)
+  - `templates/`
+    - `index.html`
+  - `static/` (diretório para imagens e CSS)
+    - `styles.css`
+    - `imagens/`
+      - `usuarios.png`
+      - `maquinas.png`
+      - `ativos.png`
+      - `bloqueados.png`
+
+#### **10. Sugestões Finais**
+- Automatizar o início do servidor Flask com um serviço do Windows.
+- Implementar autenticação básica para proteger o acesso ao site.
+- Monitorar o uso e desempenho do servidor para garantir disponibilidade.
+
+---
+
+O sistema agora possui uma interface moderna e intuitiva com integração visual e funcional para consulta de dados do Active Directory Sebrae-AC. Caso precise de melhorias adicionais, é só avisar!
+
